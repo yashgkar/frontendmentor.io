@@ -1,164 +1,190 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
 :root {
-    --Pale-Blue: hsl(243, 100%, 93%);
-    --Grayish-Blue: hsl(229, 7%, 55%);
-    --Dark-Blue: hsl(228, 56%, 26%);
-    --Very-Dark-Blue: hsl(229, 57%, 11%);
+  --Pale-Blue: hsl(243, 100%, 93%);
+  --Grayish-Blue: hsl(229, 7%, 55%);
+  --Dark-Blue: hsl(228, 56%, 26%);
+  --Very-Dark-Blue: hsl(229, 57%, 11%);
 }
 
 body {
-    padding: 0;
-    margin: 0;
-    background: var(--Very-Dark-Blue);
-    color: white;
-    font-family: 'Raleway', sans-serif;
+  padding: 0;
+  margin: 0;
+  background: var(--Very-Dark-Blue);
+  color: white;
+  font-family: "Raleway", sans-serif;
 }
 
 .main-content {
-    position: relative;
-    width: 1440px;
+  position: relative;
+  width: 1440px;
 }
 
 .main-content::before {
-    content: '';
-    position: fixed;
-    width: 100%;
-    height: 70vh;
-    margin: 40vh 0 0 0;
-    top: 0;
-    background: url('./images/bg-desktop.png');
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 70vh;
+  margin: 40vh 0 0 0;
+  top: 0;
+  background: url("./images/bg-desktop.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: opacity(50%);
+}
+
+@media (max-width: 40rem) {
+  .main-content::before {
+    background: url("./images/bg-mobile.png");
+    margin: 0;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    filter: opacity(50%);
+    width: 100%;
+    height: 100%;
+    filter: opacity(100%);
+  }
 }
 
 .container {
-    position: absolute;
-    height: auto;
-    width: 70%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-around;
-    margin: 18rem 0 0 15rem;
-    text-align: center;
-    z-index: 1;
+  position: absolute;
+  height: auto;
+  width: 70%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  margin: 18rem 0 0 15rem;
+  text-align: center;
+  z-index: 1;
 }
 
 .brand {
-    background: var(--Dark-Blue);
-    width: 14rem;
-    padding: 2rem 4rem 2rem 2rem;
-    border-radius: 10px 90px 10px 10px;
+  background: var(--Dark-Blue);
+  width: 14rem;
+  padding: 2rem 4rem 2rem 2rem;
+  border-radius: 10px 90px 10px 10px;
 }
 
 .brand-logo {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 .buttons {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .buttons a {
-    background: var(--Very-Dark-Blue);
-    text-decoration: none;
-    color: white;
-    border-radius: 10px;
-    width: 3.5rem;
-    height: 3.5rem;
-    text-align: center;
+  background: var(--Very-Dark-Blue);
+  text-decoration: none;
+  color: white;
+  border-radius: 10px;
+  width: 3.5rem;
+  height: 3.5rem;
+  text-align: center;
 }
 
 .buttons img {
-    margin: 1rem;
+  margin: 1rem;
 }
 
 .stats {
-    background: var(--Dark-Blue);
-    padding: 2rem 4rem 2rem 2rem;
-    border-radius: 10px;
-    width: 30rem;
+  background: var(--Dark-Blue);
+  padding: 2rem 4rem 2rem 2rem;
+  border-radius: 10px;
+  width: 30rem;
 }
 
-.stats>h1 {
-    font-size: 1rem;
-    font-weight: 400;
-    width: fit-content;
+.stats > h1 {
+  font-size: 1rem;
+  font-weight: 400;
+  width: fit-content;
+}
+
+@media (max-width: 40rem) {
+    .container{
+        position: relative;
+        margin: 2rem 0;
+        display: grid;
+        margin: 0;
+    }
+    .stats{
+        margin-top: 2rem;
+
+    }
 }
 
 .consumption-container {
-    margin: 0;
-    background: var(--Very-Dark-Blue);
-    border-radius: 10px;
-    width: 100%;
-    height: auto;
-    padding: 0.2rem;
+  margin: 0;
+  background: var(--Very-Dark-Blue);
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  padding: 0.2rem;
 }
 
 .consumption {
-    background: linear-gradient(90deg, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
-    border-radius: 10px;
-    width: 70%;
-    height: auto;
-    padding: 0.1rem;
-    overflow: auto;
+  background: linear-gradient(90deg, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+  border-radius: 10px;
+  width: 70%;
+  height: auto;
+  padding: 0.1rem;
+  overflow: auto;
 }
 
 .pointer {
-    background: white;
-    border-radius: 10px;
-    width: 0.7rem;
-    height: 0.7rem;
-    float: right;
+  background: white;
+  border-radius: 10px;
+  width: 0.7rem;
+  height: 0.7rem;
+  float: right;
 }
 
 .consumption-data h1 {
-    display: inline-block;
-    font-size: 0.9rem;
-    font-weight: 700;
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 700;
 }
 
 .min {
-    float: left;
+  float: left;
 }
 
 .max {
-    float: right;
+  float: right;
 }
 
 .bubble {
-    background: white;
-    color: black;
-    border-radius: 10px;
-    vertical-align: middle;
-    position: absolute;
-    top: 0;
-    right: 5.4rem;
-    padding: 0.5rem 1rem;
-    z-index: 3;
+  background: white;
+  color: black;
+  border-radius: 10px;
+  vertical-align: middle;
+  position: absolute;
+  top: 0;
+  right: 5.4rem;
+  padding: 0.5rem 1rem;
+  z-index: 3;
 }
 
 .bubble h1 {
-    font-size: 3rem;
-    display: inline;
-    margin: 0;
+  font-size: 3rem;
+  display: inline;
+  margin: 0;
 }
 
 .bubble h2 {
-    font-size: 1rem;
-    display: inline;
-    margin: 0;
+  font-size: 1rem;
+  display: inline;
+  margin: 0;
 }
 
 .arrow {
-    display: block;
-    position: absolute;
-    width: 2.5rem;
-    transform: translateX(8.1rem) translateY(-2.1rem) rotateZ(45deg) skewX(45deg);
-    height: 2.5rem;
-    z-index: -1;
-    background: rgb(255, 255, 255);
+  display: block;
+  position: absolute;
+  width: 2.5rem;
+  transform: translateX(8.1rem) translateY(-2.1rem) rotateZ(45deg) skewX(45deg);
+  height: 2.5rem;
+  z-index: -1;
+  background: rgb(255, 255, 255);
 }
